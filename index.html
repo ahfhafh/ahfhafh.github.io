@@ -6,7 +6,7 @@
     <link href="/dist/output.css" rel="stylesheet">
     <title>Tittle</title>
     <script>
-        fetch("nav.html")
+        fetch("src/nav.html")
             .then(res => res.text())
             .then(text => document.getElementById('nav').insertAdjacentText('beforeend', text));
     </script>
