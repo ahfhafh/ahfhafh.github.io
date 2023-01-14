@@ -4,11 +4,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="/dist/output.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.3.slim.min.js"
+        integrity="sha256-ZwqZIVdD3iXNyGHbSYdsmWP//UBokj2FHAxKuSBKDSo=" crossorigin="anonymous"></script>
     <title>Tittle</title>
     <script>
-        fetch("src/nav.html")
-            .then(res => res.text())
-            .then(text => document.getElementById('nav').insertAdjacentText('beforeend', text));
+        $(document).ready(() => {
+            $("#nav").load("nav.html");
+        });
     </script>
 </head>
 
