@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.circle_container {
+    -webkit-clip-path: circle(180px);
+    clip-path: circle(180px);
+}
+
+.circle_container:hover {
+    -webkit-clip-path: none;
+    clip-path: circle(100%);
+}
