@@ -4,10 +4,12 @@
 
 .circle_container {
     -webkit-clip-path: circle(180px);
-    clip-path: circle(180px);
+    clip-path: circle(25%);
 }
 
 .circle_container:hover {
-    -webkit-clip-path: none;
+    -webkit-clip-path: circle(100%);
     clip-path: circle(100%);
 }
+
+.projImg {}
