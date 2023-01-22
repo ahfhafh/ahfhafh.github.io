@@ -4,11 +4,13 @@
 
 .circle_container {
     -webkit-clip-path: circle(180px);
-    clip-path: circle(25%);
+    clip-path: circle(180px);
+    border: 1px solid black;
 }
 
 .circle_container:hover {
     -webkit-clip-path: circle(100%);
+    ;
     clip-path: circle(100%);
 }
 
