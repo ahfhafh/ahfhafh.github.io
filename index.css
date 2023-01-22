@@ -2,15 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --size: 20vmin;
+}
+
 .circle_container {
     -webkit-clip-path: circle(180px);
-    clip-path: circle(180px);
-    border: 1px solid black;
+    clip-path: circle(var(--size));
 }
 
 .circle_container:hover {
     -webkit-clip-path: circle(100%);
-    ;
     clip-path: circle(100%);
 }
 
