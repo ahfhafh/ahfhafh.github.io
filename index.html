@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <svg id="bblob" class="fixed" height="230px" xmlns="http://www.w3.org/2000/svg"
+    <svg id="bblob" class="fixed top-0" height="230px" xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink" shape-rendering="geometricPrecision"
         text-rendering="geometricPrecision">
         <defs>
@@ -28,7 +28,7 @@
         <path id="hidden_info_bg" style="visibility:hidden" d="M -100 -100 h 390 v 2100 h -2000 Z"
             transform="translate(50 50)" />
     </svg>
-    <div id="blobText" class="pointer-events-none p-4 h-full w-[340px] fixed">
+    <div id="blobText" class="top-0 pointer-events-none p-4 h-full w-[340px] fixed">
         <div id="blobIntro" class="pt-20">
             <p class="text-sm ml-10">hello.</p>
             <p class="font-sans text-5xl ml-8">I am Jack</p>
@@ -39,23 +39,104 @@
         </div>
     </div>
 
+    <p class="text-4xl underline text-center mx-auto mt-20">Stuff I made:</p>
 
-    <!-- 
-    <img class="-z-20 relative" src="./assets/battleshit.png" alt="Proj 1" />
-    <img class="-z-20 relative" src="./assets/battleshit.png" alt="Proj 1" /> -->
-
-    <div div="projs" class="">
-        <div class="px-12">
-            <img class="mx-auto max-w-sm h-96 max-h-[calc(100vw-96px)] rounded-[50%] object-cover hover:rounded-md hover:max-w-7xl transition-all duration-1000"
-                src="./assets/battleshit.png" alt="Proj 1" />
-            <p><a href="#">Battleshit</a></p>
+    <div id="projsGrid" class="flex justify-around px-8 pt-24">
+        <div id="proj1" class="">
+            <div id="proj1box" class="w-64 h-64 overflow-hidden" onclick="expand('proj1')">
+                <img class="object-cover h-full mx-auto transition-transform duration-1000"
+                    src="./assets/battleshit1.jpg" alt="Battleshit" />
+            </div>
+            <p>Battleshit</p>
         </div>
-        <div>
-
+        <div id="proj2" class="">
+            <div id="proj2box" class="w-64 h-64 overflow-hidden" onclick="expand('proj2')">
+                <img class="object-cover h-full mx-auto transition-transform duration-1000"
+                    src="./assets/ratemyuofccourses1.jpg" alt="Rate my UofC Courses" />
+            </div>
+            <p>Rate My UofC Courses</p>
+        </div>
+        <div id="proj3" class="">
+            <div id="proj3box" class="w-64 h-64 overflow-hidden">
+                <img class="object-cover h-full mx-auto transition-transform duration-1000"
+                    src="./assets/battleshit1.jpg" alt="Proj 1" />
+            </div>
+            <p>Battleshit</p>
         </div>
     </div>
 
+    <div id="proj1bg" class="absolute top-0 left-0 h-full w-full hidden bg-slate-300" onclick="closeExpand('proj1')">
+        <div class="pt-24" onclick="event.stopPropagation()">
+            <img class="proj1pic object-cover mx-auto" src="./assets/battleshit1.jpg"
+                alt="Battleship but with sh*t gameplay1" />
+            <img class="proj1pic hidden object-cover mx-auto" src="./assets/battleshit2.jpg"
+                alt="Battleship but with sh*t gameplay2" />
+            <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+            <p><a href="#">Battleshit</a></p>
+        </div>
 
+    </div>
+    <div id="proj1bg" class="absolute top-0 left-0 h-full w-full hidden bg-slate-300">
+    </div>
+
+    <div id="proj2bg" class="absolute top-0 left-0 h-full w-full hidden bg-slate-300" onclick="closeExpand('proj2')">
+        <div class="pt-24" onclick="event.stopPropagation()">
+            <img class="proj2pic object-cover mx-auto" src="./assets/ratemyuofccourses1.jpg"
+                alt="Rate my UofC courses homepage" />
+            <img class="proj2pic hidden object-cover mx-auto" src="./assets/ratemyuofccourses2.jpg" alt="" />
+            <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
+            <p><a href="#">Battleshit</a></p>
+        </div>
+
+    </div>
+    <div id="proj2bg" class="absolute top-0 left-0 h-full w-full hidden bg-slate-300">
+    </div>
+
+    <script>
+        const expand = (name) => {
+            let projbg = document.getElementById(name + "bg");
+            projbg.style.display = "block";
+        }
+
+        const closeExpand = (name) => {
+            let projbg = document.getElementById(name + "bg");
+            projbg.style.display = "none";
+        }
+
+        // let projbg = document.getElementById("proj1bg");
+
+        // window.onclick = function (event) {
+        //     if (event.target == projbg) {
+        //         projbg.style.display = "none";
+        //     }
+        // }
+
+        let slideIndex = [1, 1];
+        let slideId = ["proj1pic", "proj2pic", "proj3pic"]
+        showSlides(1, 0);
+        showSlides(1, 1);
+
+        function plusSlides(n, projno) {
+            showSlides(slideIndex[projno] += n, projno);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n, projno) {
+            let i;
+            let x = document.getElementsByClassName(slideId[projno]);
+            if (n > x.length) { slideIndex[projno] = 1 }
+            if (n < 1) { slideIndex[projno] = x.length }
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            x[slideIndex[projno] - 1].style.display = "block";
+        }
+    </script>
 
 </body>
 
