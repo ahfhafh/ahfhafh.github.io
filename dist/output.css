@@ -637,6 +637,10 @@ video {
   z-index: -30;
 }
 
+.z-10 {
+  z-index: 10;
+}
+
 .float-right {
   float: right;
 }
@@ -1893,9 +1897,9 @@ video {
   font-family: Josefin Sans, sans-serif, system-ui;
 }
 
-.text-xs {
-  font-size: 0.75rem;
-  line-height: 1rem;
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 
 .text-5xl {
@@ -1913,30 +1917,12 @@ video {
   line-height: 2.5rem;
 }
 
-.text-sm {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-}
-
-.text-base {
-  font-size: 1rem;
-  line-height: 1.5rem;
-}
-
-.font-bold {
-  font-weight: 700;
-}
-
-.font-thin {
-  font-weight: 100;
-}
-
 .font-light {
   font-weight: 300;
 }
 
-.font-extralight {
-  font-weight: 200;
+.font-bold {
+  font-weight: 700;
 }
 
 .uppercase {
@@ -2446,6 +2432,7 @@ video {
   transition: all;
   transition-duration: 300ms;
   transition-timing-function: ease-in-out;
+  z-index: 20;
 }
 
 .projbgpics {
