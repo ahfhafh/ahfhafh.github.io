@@ -673,14 +673,14 @@ video {
   margin: 2.5rem;
 }
 
-.mx-auto {
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .my-96 {
   margin-top: 24rem;
   margin-bottom: 24rem;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .ml-10 {
@@ -689,6 +689,10 @@ video {
 
 .ml-8 {
   margin-left: 2rem;
+}
+
+.mt-12 {
+  margin-top: 3rem;
 }
 
 .mt-20 {
@@ -803,6 +807,10 @@ video {
   height: 0.25rem;
 }
 
+.w-full {
+  width: 100%;
+}
+
 .w-\[340px\] {
   width: 340px;
 }
@@ -814,10 +822,6 @@ video {
 
 .w-1 {
   width: 0.25rem;
-}
-
-.w-full {
-  width: 100%;
 }
 
 .max-w-7xl {
@@ -1810,6 +1814,16 @@ video {
   padding: 0.5rem;
 }
 
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
 .px-8 {
   padding-left: 2rem;
   padding-right: 2rem;
@@ -2329,37 +2343,72 @@ video {
   x: string;
 }
 
+:root {
+  --default-bg:
+        linear-gradient(322deg, #ba4aff, rgba(186, 74, 255, 0) 70%),
+        linear-gradient(178deg, #008aff, rgba(0, 138, 255, 0) 70%),
+        linear-gradient(24deg, #00ffc6, rgba(0, 255, 198, 0) 35%),
+        linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1));
+}
+
 .proj {
   margin-left: 3rem;
   margin-right: 3rem;
-  cursor: pointer;
-  border-radius: 0.375rem;
+  margin-bottom: 4rem;
 }
 
 .projbox {
+  cursor: pointer;
+  border-radius: 0.375rem;
+  border: 2px solid black;
+}
+
+.projpic {
   width: 16rem;
   height: 12rem;
   overflow: hidden;
-  border-right: 2px solid black;
-  border-left: 2px solid black;
-  border-top: 2px solid black;
 }
 
-.projbox:hover {
+.projpic:hover {
   padding: 2.5px;
   width: 17rem;
   height: 13rem;
-  border-bottom: 2px solid black;
 }
 
 .projName {
   font-size: 1.25rem;
-  line-height: 1.75rem;
-  font-weight: 700;
-  padding: 1.25rem 0 1rem 1rem;
-  border-right: 2px solid black;
-  border-left: 2px solid black;
-  border-bottom: 2px solid black;
+  padding: 0.25rem 1rem;
+  color: rgba(0, 0, 0, 0.9);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.projName::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  -webkit-clip-path: circle(0% at 50% 50%);
+          clip-path: circle(0% at 50% 50%);
+  transition: -webkit-clip-path 400ms ease-out;
+  transition: clip-path 400ms ease-out;
+  transition: clip-path 400ms ease-out, -webkit-clip-path 400ms ease-out;
+  background: var(--default-bg);
+  z-index: -1;
+}
+
+.projName:hover::before {
+  -webkit-clip-path: circle(50% at 50% 50%);
+          clip-path: circle(50% at 50% 50%);
+}
+
+.projName:active::before {
+  -webkit-clip-path: circle(100% at 50% 50%);
+          clip-path: circle(100% at 50% 50%);
 }
 
 .projLink {
@@ -2409,6 +2458,10 @@ video {
 
 .hover\:font-bold:hover {
   font-weight: 700;
+}
+
+.hover\:outline-orange-400:hover {
+  outline-color: #fb923c;
 }
 
 .before\:hover\:text-center:hover::before {
