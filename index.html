@@ -24,9 +24,14 @@
         text-rendering="geometricPrecision">
         <defs>
             <linearGradient id="bblobGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stop-color="#8AEFCF" />
-                <stop offset="100%" stop-color="#EF8AAA" />
-                <animate attributeName="x1" dur="3000ms" from="90%" to="0%" repeatCount="indefinite" />
+                <stop offset="0%" stop-color="#8AEFCF">
+                    <animate attributeName="stop-color" dur="3000ms" values="#8AEFCF;#EF8AAA;#EF8AAA;#8AEFCF;"
+                        repeatCount="indefinite" />
+                </stop>
+                <stop offset="100%" stop-color="#EF8AAA">
+                    <animate attributeName="stop-color" dur="3000ms" values="#EF8AAA;#8AEFCF;#8AEFCF;#EF8AAA;"
+                        repeatCount="indefinite" />
+                </stop>
             </linearGradient>
         </defs>
 
