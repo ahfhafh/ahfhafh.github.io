@@ -2417,12 +2417,16 @@ video {
 
 .projbg {
   position: fixed;
-  display: none;
+  visibility: hidden;
+  opacity: 0;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
   background-color: rgb(19 78 74 / 0.8);
+  transition: all;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
 }
 
 .slidepic {
@@ -2454,6 +2458,40 @@ video {
 .next {
   right: 0;
   border-radius: 3px 0 0 3px;
+}
+
+@keyframes scale-pic {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+    -webkit-transform: scale(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    -webkit-transform: scale(1);
+  }
+}
+
+@keyframes scale-pic--reversed {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+    -webkit-transform: scale(1);
+  }
+
+  99% {
+    opacity: 0;
+    transform: scale(0);
+    -webkit-transform: scale(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(0);
+    -webkit-transform: scale(0);
+  }
 }
 
 .hover\:font-bold:hover {

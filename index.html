@@ -96,7 +96,7 @@
     </div>
 
     <div id="proj1bg" class="projbg" onclick="closeExpand('proj1')">
-        <div class="mt-24 w-fit mx-auto" onclick="event.stopPropagation()">
+        <div id="proj1bgpic" class="mt-24 w-fit mx-auto" onclick="event.stopPropagation()">
             <img class="proj1pic slidepic" src="./assets/battleshit1.jpg" alt="Battleship but with sh*t gameplay1" />
             <img class="proj1pic hidden slidepic" src="./assets/battleshit2.jpg"
                 alt="Battleship but with sh*t gameplay2" />
@@ -107,7 +107,7 @@
     </div>
 
     <div id="proj2bg" class="projbg" onclick="closeExpand('proj2')">
-        <div class="mt-24 w-fit mx-auto max-w-7xl" onclick="event.stopPropagation()">
+        <div id="proj2bgpic" class="mt-24 w-fit mx-auto max-w-7xl" onclick="event.stopPropagation()">
             <img class="proj2pic slidepic" src="./assets/ratemyuofccourses1.jpg" alt="Rate my UofC courses homepage" />
             <img class="proj2pic hidden slidepic" src="./assets/ratemyuofccourses2.jpg" alt="" />
             <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
@@ -133,12 +133,18 @@
 
         const expand = (name) => {
             let projbg = document.getElementById(name + "bg");
-            projbg.style.display = "block";
+            let projbgpic = document.getElementById(name + "bgpic");
+            projbg.style.visibility = "visible";
+            projbg.style.opacity = 1;
+            projbgpic.style.animation = "scale-pic .3s";
         }
 
         const closeExpand = (name) => {
             let projbg = document.getElementById(name + "bg");
-            projbg.style.display = "none";
+            let projbgpic = document.getElementById(name + "bgpic");
+            projbg.style.opacity = 0;
+            setTimeout(() => { projbg.style.visibility = "hidden"; }, 300);
+            projbgpic.style.animation = "scale-pic--reversed .3s";
         }
 
         let slideIndex = [1, 1];
