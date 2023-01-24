@@ -6,11 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script type="module" src="/index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/kute.js@2.2.4/dist/kute.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.148.0/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.cells.min.js"></script>
     <link href="/dist/output.css" rel="stylesheet">
     <title>I am portfolio</title>
 </head>
 
 <body>
+    <div id="threeDbg" class="fixed top-0 left-0 w-full h-full -z-30"></div>
     <svg id="bblob" class="fixed top-0" height="230px" xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink" shape-rendering="geometricPrecision"
         text-rendering="geometricPrecision">
@@ -23,78 +26,91 @@
 
         <path id="blob"
             d="M-22.78394,123.99658c30.30101-4.32872,38.224321-13.578269,68.659261-20.495299c54.76414-12.4464,64.164111-33.78373,107.600341,0c7.46514,5.80622,47.435813,23.138065,52.263023,32.792485c6.70834,13.41668,22.837255,19.54231,26.643905,33.81725c3.39954,12.74826,3.4014,31.484067,0,45.089667-9.19626,36.78505-64.550565,27.022137-90.179345,43.040127-24.72918,15.45573-68.860764,14.070046-96.327924,9.222896-29.38583-5.18574-84.184571,16.798544-96.327911-9.222896-7.31425-15.6734-4.39024-43.35383-3.0743-60.46114c1.12439-14.61701,9.9718-63.25959,19.47054-72.75833c6.90905-6.90905,19.01746-5.12383,27.66866-5.12383"
-            stroke="#000000" stroke-width="0.1" fill="url(#bblobGradient)" transform="translate(50 -50)" />
+            stroke="#000000" stroke-width="0.1" fill="url(#bblobGradient)" opacity="0.5"
+            transform="translate(50 -50)" />
 
-        <path id="hidden_info_bg" style="visibility:hidden" d="M -100 -100 h 390 v 2100 h -2000 Z"
+        <path id="hidden_info_bg" style="visibility:hidden" d="M -100 -100 h 390 v 2100 h -2000 Z" opacity="0.5"
             transform="translate(50 50)" />
     </svg>
     <div id="blobText" class="top-0 pointer-events-none p-4 h-full w-[340px] fixed">
         <div id="blobIntro" class="pt-20">
-            <p class="text-sm ml-10">hello.</p>
+            <p class="text-xs ml-10">hello.</p>
             <p class="font-sans text-5xl ml-8">I am Jack</p>
         </div>
         <div id="hidden_info" class="ml-10 pt-32 hidden absolute">
-            <p>Reach out and touch me <i>pls</i>:</p>
+            <p class="text-lg font-bold">Reach out to me @:</p>
             <p><a href="mailto: jack.yang328@gmail.com" target="_blank">jack.yang328@gmail.com</a></p>
+            <p><a href="" target="_blank">LinkedIn</a></p>
+            <p><a href="" target="_blank">Github</a></p>
+            <p><a href="" target="_blank"></a></p>
         </div>
     </div>
 
     <p class="text-4xl underline text-center mx-auto mt-20">Stuff I made:</p>
 
-    <div id="projsGrid" class="flex justify-around px-8 pt-24">
-        <div id="proj1" class="">
-            <div id="proj1box" class="w-64 h-64 overflow-hidden" onclick="expand('proj1')">
+    <div id="projsGrid" class="flex flex-wrap justify-around px-8 pt-24">
+        <div id="proj1" class="proj">
+            <div id="proj1box" class="projbox transition-all duration-1000" onclick="expand('proj1')">
                 <img class="object-cover h-full mx-auto transition-transform duration-1000"
                     src="./assets/battleshit1.jpg" alt="Battleshit" />
             </div>
-            <p>Battleshit</p>
+            <p class="projName">Battleshit</p>
+            <p class="projLink"><i>Github</i></p>
         </div>
-        <div id="proj2" class="">
-            <div id="proj2box" class="w-64 h-64 overflow-hidden" onclick="expand('proj2')">
+        <div id="proj2" class="proj">
+            <div id="proj2box" class="projbox" onclick="expand('proj2')">
                 <img class="object-cover h-full mx-auto transition-transform duration-1000"
                     src="./assets/ratemyuofccourses1.jpg" alt="Rate my UofC Courses" />
             </div>
-            <p>Rate My UofC Courses</p>
+            <p class="projName">Rate My UofC Courses</p>
+            <p class="projLink"><i>Github</i></p>
         </div>
-        <div id="proj3" class="">
-            <div id="proj3box" class="w-64 h-64 overflow-hidden">
-                <img class="object-cover h-full mx-auto transition-transform duration-1000"
-                    src="./assets/battleshit1.jpg" alt="Proj 1" />
+        <div id="proj3" class="proj">
+            <div id="proj3box" class="projbox">
+                <img class="object-cover h-full mx-auto transition-transform duration-1000" src="./assets/chatapp1.jpg"
+                    alt="Proj 1" />
             </div>
-            <p>Battleshit</p>
+            <p class="projName">Online chat</p>
+            <p class="projLink"><i>Github</i></p>
         </div>
     </div>
 
-    <div id="proj1bg" class="absolute top-0 left-0 h-full w-full hidden bg-slate-300" onclick="closeExpand('proj1')">
-        <div class="pt-24" onclick="event.stopPropagation()">
-            <img class="proj1pic object-cover mx-auto" src="./assets/battleshit1.jpg"
-                alt="Battleship but with sh*t gameplay1" />
-            <img class="proj1pic hidden object-cover mx-auto" src="./assets/battleshit2.jpg"
+    <div id="proj1bg" class="projbg" onclick="closeExpand('proj1')">
+        <div class="mt-24 w-fit mx-auto" onclick="event.stopPropagation()">
+            <img class="proj1pic slidepic" src="./assets/battleshit1.jpg" alt="Battleship but with sh*t gameplay1" />
+            <img class="proj1pic hidden slidepic" src="./assets/battleshit2.jpg"
                 alt="Battleship but with sh*t gameplay2" />
             <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
             <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
             <p><a href="#">Battleshit</a></p>
         </div>
-
-    </div>
-    <div id="proj1bg" class="absolute top-0 left-0 h-full w-full hidden bg-slate-300">
     </div>
 
-    <div id="proj2bg" class="absolute top-0 left-0 h-full w-full hidden bg-slate-300" onclick="closeExpand('proj2')">
-        <div class="pt-24" onclick="event.stopPropagation()">
-            <img class="proj2pic object-cover mx-auto" src="./assets/ratemyuofccourses1.jpg"
-                alt="Rate my UofC courses homepage" />
-            <img class="proj2pic hidden object-cover mx-auto" src="./assets/ratemyuofccourses2.jpg" alt="" />
+    <div id="proj2bg" class="projbg" onclick="closeExpand('proj2')">
+        <div class="mt-24 w-fit mx-auto max-w-7xl" onclick="event.stopPropagation()">
+            <img class="proj2pic slidepic" src="./assets/ratemyuofccourses1.jpg" alt="Rate my UofC courses homepage" />
+            <img class="proj2pic hidden slidepic" src="./assets/ratemyuofccourses2.jpg" alt="" />
             <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
             <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
-            <p><a href="#">Battleshit</a></p>
+            <p><a href="#">Rate My UofC Courses</a></p>
         </div>
-
-    </div>
-    <div id="proj2bg" class="absolute top-0 left-0 h-full w-full hidden bg-slate-300">
     </div>
 
     <script>
+        VANTA.CELLS({
+            el: "#threeDbg",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            color1: 0xf0f0,
+            color2: 0x393825,
+            size: 5.00,
+            speed: 0.20
+        })
+
         const expand = (name) => {
             let projbg = document.getElementById(name + "bg");
             projbg.style.display = "block";
@@ -104,14 +120,6 @@
             let projbg = document.getElementById(name + "bg");
             projbg.style.display = "none";
         }
-
-        // let projbg = document.getElementById("proj1bg");
-
-        // window.onclick = function (event) {
-        //     if (event.target == projbg) {
-        //         projbg.style.display = "none";
-        //     }
-        // }
 
         let slideIndex = [1, 1];
         let slideId = ["proj1pic", "proj2pic", "proj3pic"]
