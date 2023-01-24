@@ -8,7 +8,9 @@
     <script src="https://cdn.jsdelivr.net/npm/kute.js@2.2.4/dist/kute.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.148.0/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.cells.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link href="/dist/output.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <title>I am portfolio</title>
 </head>
 
@@ -46,10 +48,16 @@
         </div>
     </div>
 
-    <p class="text-4xl underline text-center mx-auto mt-20">Stuff I made:</p>
+    <p class="text-center my-96">hello</p>
+
+    <a href="#stuffmade">
+        <p class="text-center my-96">Stuff I made ></p>
+    </a>
+
+    <p id="stuffmade" class="text-4xl underline text-center mx-auto mt-20">Stuff I made:</p>
 
     <div id="projsGrid" class="flex flex-wrap justify-around px-8 pt-24">
-        <div id="proj1" class="proj">
+        <div id="proj1" class="proj" data-aos="fade-up">
             <div id="proj1box" class="projbox transition-all duration-1000" onclick="expand('proj1')">
                 <img class="object-cover h-full mx-auto transition-transform duration-1000"
                     src="./assets/battleshit1.jpg" alt="Battleshit" />
@@ -105,8 +113,8 @@
             minHeight: 200.00,
             minWidth: 200.00,
             scale: 1.00,
-            color1: 0xf0f0,
-            color2: 0x393825,
+            color1: 0x5ef5d1,
+            color2: 0x20f7ab,
             size: 5.00,
             speed: 0.20
         })
@@ -144,6 +152,8 @@
             }
             x[slideIndex[projno] - 1].style.display = "block";
         }
+
+        AOS.init();
     </script>
 
 </body>

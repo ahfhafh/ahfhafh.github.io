@@ -678,6 +678,11 @@ video {
   margin-right: auto;
 }
 
+.my-96 {
+  margin-top: 24rem;
+  margin-bottom: 24rem;
+}
+
 .ml-10 {
   margin-left: 2.5rem;
 }
