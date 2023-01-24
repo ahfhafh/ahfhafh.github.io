@@ -96,22 +96,26 @@
     </div>
 
     <div id="proj1bg" class="projbg" onclick="closeExpand('proj1')">
-        <div id="proj1bgpic" class="mt-24 w-fit mx-auto" onclick="event.stopPropagation()">
+        <div id="proj1bgpics" class="projbgpics" onclick="event.stopPropagation()">
             <img class="proj1pic slidepic" src="./assets/battleshit1.jpg" alt="Battleship but with sh*t gameplay1" />
             <img class="proj1pic hidden slidepic" src="./assets/battleshit2.jpg"
                 alt="Battleship but with sh*t gameplay2" />
-            <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+            <div class="slidearrows">
+                <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+            </div>
             <p><a href="#">Battleshit</a></p>
         </div>
     </div>
 
     <div id="proj2bg" class="projbg" onclick="closeExpand('proj2')">
-        <div id="proj2bgpic" class="mt-24 w-fit mx-auto max-w-7xl" onclick="event.stopPropagation()">
+        <div id="proj2bgpics" class="projbgpics" onclick="event.stopPropagation()">
             <img class="proj2pic slidepic" src="./assets/ratemyuofccourses1.jpg" alt="Rate my UofC courses homepage" />
             <img class="proj2pic hidden slidepic" src="./assets/ratemyuofccourses2.jpg" alt="" />
-            <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
+            <div class="slidearrows">
+                <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
+            </div>
             <p><a href="#">Rate My UofC Courses</a></p>
         </div>
     </div>
@@ -133,7 +137,7 @@
 
         const expand = (name) => {
             let projbg = document.getElementById(name + "bg");
-            let projbgpic = document.getElementById(name + "bgpic");
+            let projbgpic = document.getElementById(name + "bgpics");
             projbg.style.visibility = "visible";
             projbg.style.opacity = 1;
             projbgpic.style.animation = "scale-pic .3s";
@@ -141,7 +145,7 @@
 
         const closeExpand = (name) => {
             let projbg = document.getElementById(name + "bg");
-            let projbgpic = document.getElementById(name + "bgpic");
+            let projbgpic = document.getElementById(name + "bgpics");
             projbg.style.opacity = 0;
             setTimeout(() => { projbg.style.visibility = "hidden"; }, 300);
             projbgpic.style.animation = "scale-pic--reversed .3s";
