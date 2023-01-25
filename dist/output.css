@@ -2322,6 +2322,10 @@ video {
   transition-duration: 1000ms;
 }
 
+.duration-500 {
+  transition-duration: 500ms;
+}
+
 .ease-in {
   transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
 }
@@ -2356,8 +2360,8 @@ video {
 }
 
 .proj {
-  margin-left: 3rem;
-  margin-right: 3rem;
+  margin-left: 4rem;
+  margin-right: 4rem;
   margin-bottom: 4rem;
 }
 
@@ -2374,10 +2378,19 @@ video {
   border-radius: 0.375rem 0.375rem 0 0;
 }
 
+.projpic>img {
+  border-radius: 0.375rem 0.375rem 0 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .projpic {
+    width: 20rem;
+    height: 16rem;
+  }
+}
+
 .projpic:hover {
-  padding: 2.5px;
-  width: 17rem;
-  height: 13rem;
+  padding: 0.25rem;
 }
 
 .projName {
