@@ -166,3 +166,8 @@
         -webkit-transform: scale(0);
     }
 }
+
+#abc {
+    touch-action: none;
+    z-index: 50;
+}
