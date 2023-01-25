@@ -245,6 +245,7 @@
 
         AOS.init();
 
+        // https://codepen.io/shubniggurath/pen/EmMzpp
         let canvas, ctx;
         let render, init;
         let blob;
@@ -468,7 +469,7 @@
             canvas.setAttribute('touch-action', 'none');
 
             let resize = function () {
-                canvas.width = window.innerWidth - 60;
+                canvas.width = window.innerWidth;
                 canvas.height = window.innerHeight - 80;
             }
             window.addEventListener('resize', resize);

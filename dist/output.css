@@ -629,12 +629,12 @@ video {
   top: 25%;
 }
 
-.right-0 {
-  right: 0px;
-}
-
 .top-1\/2 {
   top: 50%;
+}
+
+.right-0 {
+  right: 0px;
 }
 
 .isolate {
@@ -694,10 +694,6 @@ video {
   margin-right: auto;
 }
 
-.mt-24 {
-  margin-top: 6rem;
-}
-
 .ml-10 {
   margin-left: 2.5rem;
 }
@@ -716,10 +712,6 @@ video {
 
 .mt-12 {
   margin-top: 3rem;
-}
-
-.mt-\[90vh\] {
-  margin-top: 90vh;
 }
 
 .mt-2 {
@@ -2022,6 +2014,11 @@ video {
   line-height: 2rem;
 }
 
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
 .text-\[\#336699\]\/\[\.35\] {
   color: rgb(51 102 153 / .35);
 }
@@ -2029,11 +2026,6 @@ video {
 .text-blue-500 {
   --tw-text-opacity: 1;
   color: rgb(59 130 246 / var(--tw-text-opacity));
-}
-
-.text-white {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .underline {
@@ -2377,6 +2369,10 @@ video {
         linear-gradient(178deg, #008aff, rgba(0, 138, 255, 0) 70%),
         linear-gradient(24deg, #00ffc6, rgba(0, 255, 198, 0) 35%),
         linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1));
+}
+
+body {
+  overflow-x: hidden;
 }
 
 .proj {

@@ -10,6 +10,10 @@
         linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1));
 }
 
+body {
+    overflow-x: hidden;
+}
+
 .proj {
     margin-left: 4rem;
     margin-right: 4rem;
