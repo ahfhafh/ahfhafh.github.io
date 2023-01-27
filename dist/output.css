@@ -718,6 +718,14 @@ video {
   margin-top: 0.5rem;
 }
 
+.mt-8 {
+  margin-top: 2rem;
+}
+
+.mt-4 {
+  margin-top: 1rem;
+}
+
 .box-border {
   box-sizing: border-box;
 }
@@ -818,8 +826,16 @@ video {
   height: 500px;
 }
 
+.h-4 {
+  height: 1rem;
+}
+
 .h-1 {
   height: 0.25rem;
+}
+
+.h-12 {
+  height: 3rem;
 }
 
 .w-full {
@@ -830,6 +846,10 @@ video {
   width: 500px;
 }
 
+.w-4 {
+  width: 1rem;
+}
+
 .w-fit {
   width: -moz-fit-content;
   width: fit-content;
@@ -837,6 +857,10 @@ video {
 
 .w-1 {
   width: 0.25rem;
+}
+
+.w-12 {
+  width: 3rem;
 }
 
 .flex-shrink {
