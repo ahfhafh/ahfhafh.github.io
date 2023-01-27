@@ -119,7 +119,7 @@
 
         <div class="proj" data-aos="fade-up">
             <div id="proj3box" class="projbox">
-                <div id="proj3pic" class="projpic transition-all duration-500">
+                <div id="proj3pic" class="projpic transition-all duration-500" onclick="expand('proj3')">
                     <img class="object-cover h-full mx-auto" src="./assets/chatapp1.jpg" alt="Chat App" />
                 </div>
                 <a class="projName" href="https://chat-app-vft1.onrender.com" target="_blank">Online chat</a>
@@ -130,8 +130,8 @@
 
         <div class="proj" data-aos="fade-up">
             <div id="proj4box" class="projbox">
-                <div id="proj4pic" class="projpic transition-all duration-500">
-                    <img class="object-cover h-full mx-auto" src="" alt="Blank" />
+                <div id="proj4pic" class="projpic transition-all duration-500" onclick="expand('proj4')">
+                    <img class="object-cover h-full mx-auto" src="assets/shoppurr1.jpg" alt="ShopPurr" />
                 </div>
                 <a class="projName" href="https://shoppurr.vercel.app" target="_blank">ShopPurr</a>
             </div>
@@ -142,7 +142,7 @@
         <div class="proj" data-aos="fade-up">
             <div id="proj5box" class="projbox">
                 <div id="proj5pic" class="projpic transition-all duration-500">
-                    <img class="object-cover h-full mx-auto" src="" alt="Blank" />
+                    <img class="object-cover h-full mx-auto" src="assets/kfetch1.jpg" alt="Discord kFetch bot" />
                 </div>
                 <a class="projName" href="" target="_blank">Discord kFetch</a>
             </div>
@@ -153,7 +153,7 @@
         <div class="proj" data-aos="fade-up">
             <div id="proj5box" class="projbox">
                 <div id="proj5pic" class="projpic transition-all duration-500">
-                    <img class="object-cover h-full mx-auto" src="" alt="Blank" />
+                    <img class="object-cover h-full mx-auto" src="" alt="Universities-Covid-Dashboard" />
                 </div>
                 <a class="projName" href="https://github.com/duan-le/Universities-Covid-Dashboard"
                     target="_blank">Covid-19 tracker</a>
@@ -190,6 +190,30 @@
         </div>
     </div>
 
+    <div id="proj3bg" class="projbg" onclick="closeExpand('proj3')">
+        <div id="proj3bgpics" class="projbgpics" onclick="event.stopPropagation()">
+            <img class="proj3pic slidepic" src="./assets/chatapp1.jpg" alt="Rate my UofC courses homepage" />
+            <img class="proj3pic hidden slidepic" src="./assets/chatapp2.jpg" alt="" />
+            <div class="slidearrows">
+                <a class="prev" onclick="plusSlides(-1, 2)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1, 2)">&#10095;</a>
+            </div>
+            <p><a href="#">Simple chat web app using websockets.</a></p>
+        </div>
+    </div>
+
+    <div id="proj4bg" class="projbg" onclick="closeExpand('proj4')">
+        <div id="proj4bgpics" class="projbgpics" onclick="event.stopPropagation()">
+            <img class="proj4pic slidepic" src="./assets/shoppurr1.jpg" alt="Rate my UofC courses homepage" />
+            <img class="proj4pic hidden slidepic" src="./assets/shoppurr2.jpg" alt="" />
+            <div class="slidearrows">
+                <a class="prev" onclick="plusSlides(-1, 3)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1, 3)">&#10095;</a>
+            </div>
+            <p><a href="#">Shopping website selling cat related stuff.</a></p>
+        </div>
+    </div>
+
     <script>
         VANTA.CELLS({
             el: "#threeDbg",
@@ -221,10 +245,12 @@
             projbgpic.style.animation = "scale-pic--reversed .3s";
         }
 
-        let slideIndex = [1, 1];
-        let slideId = ["proj1pic", "proj2pic", "proj3pic"]
+        let slideIndex = [1, 1, 1, 1];
+        let slideId = ["proj1pic", "proj2pic", "proj3pic", "proj4pic"]
         showSlides(1, 0);
         showSlides(1, 1);
+        showSlides(1, 2);
+        showSlides(1, 3);
 
         function plusSlides(n, projno) {
             showSlides(slideIndex[projno] += n, projno);
