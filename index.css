@@ -38,9 +38,9 @@ body {
     border-radius: 0.375rem 0.375rem 0 0;
 }
 
-.projpic>img:hover {
+/* .projpic>img:hover {
     border-radius: 0 0 0 0;
-}
+} */
 
 @media only screen and (min-width: 768px) {
     .projpic {
@@ -49,9 +49,9 @@ body {
     }
 }
 
-.projpic:hover {
+/* .projpic:hover {
     border: 0.5rem solid black;
-}
+} */
 
 .projName {
     font-size: 1.25rem;
@@ -138,6 +138,12 @@ body {
 
 .next {
     border-radius: 3px 0 0 3px;
+}
+
+.imgDesc {
+    background-color: azure;
+    border-radius: 2px;
+    padding: 8px;
 }
 
 @keyframes scale-pic {

@@ -20,52 +20,6 @@
 
 <body class="font-Josefin-reg">
     <div id="threeDbg" class="fixed top-0 left-0 w-full h-full -z-30"></div>
-    <!-- <div class="flex justify-center">
-        <div class="w-[500px] h-[500px] resize absolute top-1/4 -translate-y-1/4">
-            <svg id="bblob" class="z-10" viewbox="0 0 500 500" width="100%" height="100%"
-                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
-                <defs>
-                    <linearGradient id="bblobGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" stop-color="#8AEFCF">
-                            <animate attributeName="stop-color" dur="3000ms" values="#8AEFCF;#EF8AAA;#EF8AAA;#8AEFCF;"
-                                repeatCount="indefinite" />
-                        </stop>
-                        <stop offset="100%" stop-color="#EF8AAA">
-                            <animate attributeName="stop-color" dur="3000ms" values="#EF8AAA;#8AEFCF;#8AEFCF;#EF8AAA;"
-                                repeatCount="indefinite" />
-                        </stop>
-                    </linearGradient>
-                </defs>
-
-                <path id="blob"
-                    d="M460.5,313.5Q425,377,369,411Q313,445,249.5,446Q186,447,150.5,397.5Q115,348,66,299Q17,250,64.5,200Q112,150,155,120Q198,90,248.5,94.5Q299,99,366,108Q433,117,464.5,183.5Q496,250,460.5,313.5Z"
-                    stroke="#000000" stroke-width="0.1" fill="url(#bblobGradient)" opacity="0.75">
-                    <animate attributeName="d" dur="20s" repeatCount="indefinite"
-                        values="M421.5,297Q380,344,353,413Q326,482,255.5,466Q185,450,121.5,420Q58,390,58,320Q58,250,85,200Q112,150,148.5,100.5Q185,51,243,72Q301,93,374.5,99.5Q448,106,455.5,178Q463,250,421.5,297Z;
-                M437,300Q388,350,343,373.5Q298,397,248,404Q198,411,160.5,376.5Q123,342,66.5,296Q10,250,61.5,200Q113,150,156,122Q199,94,249.5,94.5Q300,95,354.5,115Q409,135,447.5,192.5Q486,250,437,300Z;
-                M438.5,314Q426,378,362,388.5Q298,399,248,404Q198,409,135,394Q72,379,64,314.5Q56,250,65.5,186.5Q75,123,137.5,110.5Q200,98,249,101Q298,104,349.5,122Q401,140,426,195Q451,250,438.5,314Z;
-                M438.5,313Q423,376,359.5,384.5Q296,393,237,433Q178,473,151,407.5Q124,342,83,296Q42,250,45,177Q48,104,116.5,76.5Q185,49,247.5,57Q310,65,368.5,93Q427,121,440.5,185.5Q454,250,438.5,313Z;
-                M420,308Q410,366,357,391.5Q304,417,246,428.5Q188,440,154,392Q120,344,84.5,297Q49,250,55,181Q61,112,127,93.5Q193,75,252.5,68Q312,61,381,83Q450,105,440,177.5Q430,250,420,308Z;
-                M445,308.5Q411,367,359.5,398Q308,429,252,422Q196,415,145.5,389Q95,363,76,306.5Q57,250,66,186.5Q75,123,127,77.5Q179,32,238.5,66.5Q298,101,336,130.5Q374,160,426.5,205Q479,250,445,308.5Z;
-                M421.5,297Q380,344,353,413Q326,482,255.5,466Q185,450,121.5,420Q58,390,58,320Q58,250,85,200Q112,150,148.5,100.5Q185,51,243,72Q301,93,374.5,99.5Q448,106,455.5,178Q463,250,421.5,297Z">
-
-                    </animate>
-                    <animate attributeName="d" dur="3s" begin="mouseenter" end="mouseleave" repeatCount="indefinite"
-                        values="M421.5,297Q380,344,353,413Q326,482,255.5,466Q185,450,121.5,420Q58,390,58,320Q58,250,85,200Q112,150,148.5,100.5Q185,51,243,72Q301,93,374.5,99.5Q448,106,455.5,178Q463,250,421.5,297Z;
-                M437,300Q388,350,343,373.5Q298,397,248,404Q198,411,160.5,376.5Q123,342,66.5,296Q10,250,61.5,200Q113,150,156,122Q199,94,249.5,94.5Q300,95,354.5,115Q409,135,447.5,192.5Q486,250,437,300Z;
-                M438.5,314Q426,378,362,388.5Q298,399,248,404Q198,409,135,394Q72,379,64,314.5Q56,250,65.5,186.5Q75,123,137.5,110.5Q200,98,249,101Q298,104,349.5,122Q401,140,426,195Q451,250,438.5,314Z;
-                M438.5,313Q423,376,359.5,384.5Q296,393,237,433Q178,473,151,407.5Q124,342,83,296Q42,250,45,177Q48,104,116.5,76.5Q185,49,247.5,57Q310,65,368.5,93Q427,121,440.5,185.5Q454,250,438.5,313Z;
-                M420,308Q410,366,357,391.5Q304,417,246,428.5Q188,440,154,392Q120,344,84.5,297Q49,250,55,181Q61,112,127,93.5Q193,75,252.5,68Q312,61,381,83Q450,105,440,177.5Q430,250,420,308Z;
-                M445,308.5Q411,367,359.5,398Q308,429,252,422Q196,415,145.5,389Q95,363,76,306.5Q57,250,66,186.5Q75,123,127,77.5Q179,32,238.5,66.5Q298,101,336,130.5Q374,160,426.5,205Q479,250,445,308.5Z;
-                M421.5,297Q380,344,353,413Q326,482,255.5,466Q185,450,121.5,420Q58,390,58,320Q58,250,85,200Q112,150,148.5,100.5Q185,51,243,72Q301,93,374.5,99.5Q448,106,455.5,178Q463,250,421.5,297Z">
-
-                    </animate>
-                </path>
-            </svg>
-        </div>
-
-    </div> -->
 
     <canvas id="abc"></canvas>
     <div class="absolute top-1/2 -translate-y-1/2 left-0 right-0 text-center pointer-events-none text-white">
@@ -173,7 +127,7 @@
                 <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
                 <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
             </div>
-            <p><a href="#">A WPF game creation of the tabletop game "Battleship" created in c#. Play against a
+            <p class="imgDesc"><a>A WPF game creation of the tabletop game "Battleship" created in c#. Play against a
                     computer.</a></p>
         </div>
     </div>
@@ -186,7 +140,7 @@
                 <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
                 <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
             </div>
-            <p><a href="#">Website where people can rate the courses at University of Calgary.</a></p>
+            <p class="imgDesc"><a>Website where people can rate the courses at University of Calgary.</a></p>
         </div>
     </div>
 
@@ -198,7 +152,7 @@
                 <a class="prev" onclick="plusSlides(-1, 2)">&#10094;</a>
                 <a class="next" onclick="plusSlides(1, 2)">&#10095;</a>
             </div>
-            <p><a href="#">Simple chat web app using websockets.</a></p>
+            <p class="imgDesc"><a>Simple chat web app using websockets.</a></p>
         </div>
     </div>
 
@@ -210,7 +164,7 @@
                 <a class="prev" onclick="plusSlides(-1, 3)">&#10094;</a>
                 <a class="next" onclick="plusSlides(1, 3)">&#10095;</a>
             </div>
-            <p><a href="#">Shopping website selling cat related stuff.</a></p>
+            <p class="imgDesc"><a>Shopping website selling cat related stuff.</a></p>
         </div>
     </div>
 
